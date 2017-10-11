@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <h2> <%=t('.offsprings')%></h2>
+
+  <div class="list-group list-view-pf list-view-pf-view">
+      <%= render @offsprings || t('.no_offsprings_yet') %>
+  </div>
+
+  <div class="btn-group">
+    <%= link_to t('.add_offspring'), new_offspring_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+

@@ -1,0 +1,34 @@
+<div class="list-group-item">
+  <div class="list-view-pf-actions">
+    <%= link_to t('.show'), offspring_path(offspring), class: "btn btn-primary" %>
+    <%# link_to t('.assign'), to: "#", class: "btn btn-warning" %>
+  </div>
+
+  <div class="list-view-pf-main-info">
+    <div class="list-view-pf-left">
+      <span class="fa fa-user list-view-pf-icon-sm"></span>
+    </div>
+    <div class="list-view-pf-body">
+      <div class="list-view-pf-description">
+        <div class="list-group-item-heading">
+          <%= link_to offspring.first_name, offspring_path(offspring) %>
+          <b>
+            <%= offspring.last_name %>
+          </b>
+        </div>
+        <div class="list-group-item-text">
+          <% if offspring.assignment.nil? %>
+              <%= t '.no_assignment_yet' %>
+          <% else %>
+              <strong class="btn btn-warning"><%= offspring.assignment.full_name %></strong>
+          <% end %>
+        </div>
+      </div>
+      <div class="list-view-pf-additional-info">
+        <div class="list-view-pf-additional-info-item">
+          <%= t "grades.#{offspring.grade}" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

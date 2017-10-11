@@ -1,0 +1,24 @@
+<p>Estimado <%= @email %>!</p>
+
+<p> Necesita confirmar su dirección de correo para acceder a la aplicación.</p>
+<p> Puede hacerlo en el siguiente enlace: </p>
+
+<p><%= link_to 'Confirmar su cuenta', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>Si el enlace no le funcione copiélo y péguelo en un navegador. Si tiene alguna duda consulte en horario de despacho.</p>
+
+
+<br>
+<p>Un afectuoso saludo:</p>
+<p>Ignacio Andreu, párroco</p>
+<p>Parroquia Sta. María Soledad Torres Acosta</p>
+<br>
+
+<p><strong>Teléfono:</strong> 912193930</p>
+<p><strong>mail-to:</strong> iglesialastablas@me.com</p>
+<p><strong>Dirección:</strong></p>
+<p> Avenida del Camino de Santiago 35.</p>
+<p>  28050 Madrid</p>
+<p>
+  http://www.archimadrid.es/lastablas/
+</p>

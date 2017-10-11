@@ -1,0 +1,29 @@
+module ApplicationHelper
+  def full_title(page_title = '')
+    base_title = t "application.name"
+    if page_title.empty?
+      base_title
+    else
+      page_title + " | " + base_title
+    end
+  end
+
+  def alert_class(messageType = "primary")
+    case messageType
+    when "default", "primary" then "alert alert-info"
+    when "notice", "success" then "alert alert-success"
+    when "error", "alert", "warning", "danger" then "alert alert-warning"
+    else "alert alert-#{messageType}"
+    end
+  end
+
+  def alert_icon(iconType = "primary")
+    case iconType
+    when "default", "primary" then "pficon pficon-help"
+    when "info" then "pficon pficon-info"
+    when "notice", "success" then "pficon pficon-ok"
+    when "warning" then "pficon pficon-warning-triangle-o"
+    when "error", "alert", "danger" then "pficon pficon-error-circle-o"
+    end
+  end
+end

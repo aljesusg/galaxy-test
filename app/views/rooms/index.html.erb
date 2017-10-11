@@ -1,0 +1,7 @@
+<div class="container-fluid">
+  <h2> <%=t('.shifts')%></h2>
+
+  <% unless @rooms.empty? %>
+      <%= render partial: 'room', collection: @rooms %>
+  <% end %>
+</div>

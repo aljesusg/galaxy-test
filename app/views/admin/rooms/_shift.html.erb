@@ -1,0 +1,10 @@
+<li>
+  <div class = "panel panel-info">
+    <div class="panel-heading">
+      <strong><%= link_to "#{shift.start_time} => #{shift.end_time}", admin_shift_path(shift), class: "label label-info" %> </strong>
+    </div>
+    <div class="panel-body">
+      <p> <%= "#{t '.sites_available'}" %> <span class='badge'>  <%= shift.sites_available %>  </span></p>
+    </div>
+  </div>
+</li>

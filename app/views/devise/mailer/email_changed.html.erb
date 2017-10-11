@@ -1,0 +1,23 @@
+<p>Estimado <%= @email %>!</p>
+
+<% if @resource.try(:unconfirmed_email?) %>
+  <p>Nos ponemos en contacto con Ud para comunicarle que su dirección de correo almacenada se está cambiando a <%= @resource.unconfirmed_email %>.</p>
+<% else %>
+  <p>Nos ponemos en contacto con Ud para comunicarle que su dirección de correo almacenada se ha cambiado a <%= @resource.email %>.</p>
+<% end %>
+
+
+<br>
+<p>Un afectuoso saludo:</p>
+<p>Ignacio Andreu, párroco</p>
+<p>Parroquia Sta. María Soledad Torres Acosta</p>
+<br>
+
+<p><strong>Teléfono:</strong> 912193930</p>
+<p><strong>mail-to:</strong> iglesialastablas@me.com</p>
+<p><strong>Dirección:</strong></p>
+<p> Avenida del Camino de Santiago 35.</p>
+<p>  28050 Madrid</p>
+<p>
+  http://www.archimadrid.es/lastablas/
+</p>

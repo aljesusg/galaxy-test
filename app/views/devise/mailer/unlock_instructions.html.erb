@@ -1,0 +1,22 @@
+<p>Estimado <%= @resource.email %>!</p>
+
+<p>Su cuenta se ha bloqueado por un número excesivo de intentos incorrectos.</p>
+
+<p>Haga click en este enlace para desbloquear su cuenta:</p>
+
+<p><%= link_to 'Desbloquear la cuenta', unlock_url(@resource, unlock_token: @token) %></p>
+
+<br>
+<p>Un afectuoso saludo:</p>
+<p>Ignacio Andreu, párroco</p>
+<p>Parroquia Sta. María Soledad Torres Acosta</p>
+<br>
+
+<p><strong>Teléfono:</strong> 912193930</p>
+<p><strong>mail-to:</strong> iglesialastablas@me.com</p>
+<p><strong>Dirección:</strong></p>
+<p> Avenida del Camino de Santiago 35.</p>
+<p>  28050 Madrid</p>
+<p>
+  http://www.archimadrid.es/lastablas/
+</p>

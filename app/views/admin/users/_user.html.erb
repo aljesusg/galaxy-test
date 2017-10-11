@@ -1,0 +1,36 @@
+<tr>
+  <td>
+    <%= link_to user.id, user_path(user) %>
+  </td>
+  <td>
+    <% if user.admin? %>
+        <strong class="btn btn-danger"><%= t '.admin' %></strong>
+    <% else %>
+      <%= t '.not_admin' %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to user.email, user_path(user) %>
+  </td>
+  <td>
+    <%= user.first_name %>
+  </td>
+  <td>
+    <%= user.last_name %>
+  </td>
+  <td>
+    <%= user.offsprings.count %>
+  </td>
+  <td>
+    <%= user.phone %>
+  </td>
+  <td>
+    <%= l user.confirmed_at  if user.confirmed_at%>
+  </td>
+  <td>
+    <%= l user.created_at %>
+  </td>
+  <td>
+    <%= l user.updated_at %>
+  </td>
+</tr>

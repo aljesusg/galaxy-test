@@ -1,0 +1,242 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+es:
+  grades:
+    primary_first:  "Primero de primaria"
+    primary_second: "Segundo de primaria"
+    primary_third:  "Tercero de primaria"
+    others:         "Otros"
+  week:
+    monday:    "Lunes"
+    tuesday:   "Martes"
+    wednesday: "Miércoles"
+    thursday:  "Jueves"
+    friday:    "Viernes"
+    saturday:  "Sábado"
+    sunday:    "Domingo"
+  layouts:
+    masthead:
+      about:      "Acerca de"
+      help:       "Ayuda"
+      info:       "Información"
+      log_in:     "Entrar"
+      log_out:    "Salir"
+      not_identified: "Desconocido"
+      offsprings: "Catecúmenos"
+      rooms:      "Turnos"
+      signed_in:  "Autenticado"
+      not_signed_in: "Necesita autenticarse"
+      sign_up:    "Darse de alta"
+      user_panel: "Usuario"
+    admin_masthead:
+      about:         "Acerca de"
+      help:          "Ayuda"
+      info:          "Información"
+      log_in:        "Entrar"
+      log_out:       "Salir"
+      offsprings:    "Catecúmenos"
+      rooms:         "Turnos"
+      users:         "Usuarios"
+      signed_in:     "Autenticado"
+      not_signed_in: "Necesita autenticarse"
+      sign_up:       "Darse de alta"
+  time:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %b"
+  registrations:
+    new:
+      characters_minimum: "mínimo %{characters} caracteres"
+  sign_up: "Nueva cuenta"
+  application:
+    name:    "Parroquia de Las Tablas"
+  activemailer:
+    subjects:
+      assignment_added: "Recordatorio de asignación de turno de catequesis"
+  activerecord:
+    models:
+      user: "Usuario"
+      offspring: "Catecúmeno"
+      assignment: "Asignación"
+      Room: "Aula"
+      Shift: "Turno"
+    attributes:
+      user:
+          id: "#"
+          email: "Correo electrónico"
+          first_name: "Nombre"
+          last_name: "Apellido"
+          offsprings: "Catecúmenos"
+          password: "Password"
+          password_confirmation: "Confirmación del password"
+          phone: "Teléfono"
+          created_at: "Creado en:"
+          updated_at: "Actualizado en:"
+      offspring:
+          id: "#"
+          grade: "Curso"
+          first_name: "Nombre"
+          last_name: "Apellidos"
+          shift: "Turno"
+          user: "Usuario"
+          created_at: "Creado en:"
+          updated_at: "Actualizado en:"
+    errors:
+      models:
+        assignment:
+          attributes:
+            shift:
+              no_sites_available: "está lleno"
+        user:
+          attributes:
+            first_name:
+              blank:       "no puede estar vacío"
+              too_short:   "es muy corto (el mínimo son %{count} caracteres)"
+              too_long:    "es muy largo (el máximo son %{count} caracteres)"
+            last_name:
+              blank:       "no puede estar vacío"
+              too_short:    "es muy corto (el mínimo son %{count} caracteres)"
+              too_long:     "es muy largo (el máximo son %{count} caracteres)"
+            email:
+              blank:       "no puede estar vacío"
+              too_short:   "es muy corto (el mínimo son %{count} caracteres)"
+              too_long:    "es muy largo (el máximo son %{count} caracteres)"
+              invalid:     "no es válido"
+              duplicated:  "ya existe"
+            password:
+              blank:       "no puede estar vacío"
+              too_short:   "es muy corto (el mínimo son %{count} caracteres)"
+              too_long:    "es muy largo (el máximo son %{count} caracteres)"
+            password_confirmation:
+              confirmation: "tiene que coincidir con el password"
+            phone:
+              blank:       "no puede estar vacío"
+              too_short:   "es muy corto (el mínimo son %{count} caracteres)"
+              too_long:    "es muy largo (el máximo son %{count} caracteres)"
+              invalid:     "no es válido"
+            confirmation_token:
+              invalid:     "no es válido"
+        offspring:
+          attributes:
+            last_name:
+              different: "deben ser iguales en todos los catecúmenos"
+  admin:
+    offsprings:
+      index:
+        offsprings: "Catecúmenos"
+        download_offsprings: "Descargar lista de catecúmenos"
+    rooms:
+      shift:
+        sites_available: "Sitios disponibles"
+      index:
+        shifts: "Turnos"
+      room:
+        capacity: "Capacidad"
+    shifts:
+      show:
+        offsprings: "Catecúmenos"
+        download_offsprings: "Descargar lista de catecúmenos"
+
+    users:
+      index:
+        users: "Usuarios"
+        download_users: "Descargar lista de usuarios"
+      user:
+        admin: "Administrador"
+        not_admin:    "No"
+  assignments:
+    create:
+      assignment_added:     "Se añadió la asignación"
+      assignment_not_added: "Ha habido un error añadiendo la asignación"
+    new:
+      choose_shifts: "Elija turno para %{who}"
+    room:
+      capacity: "capacidad"
+    shift:
+      sites_available: "Sitios disponibles"
+      select: "Seleccionar"
+      is_full: "Completo"
+  users:
+    show:
+      edit_user:     "Editar usuario"
+      add_offspring: "Añadir catecúmeno"
+      offsprings: "Catecúmenos"
+    offspring:
+      show:   "Mostrar"
+      assign: "Elegir turno"
+      no_assignment_yet: "No tiene turno asignado todavía"
+  rooms:
+    shift:
+      sites_available: "Sitios disponibles"
+    index:
+      shifts: "Turnos"
+    room:
+      capacity: "Capacidad"
+  offsprings:
+    new:
+      create:              "Crear"
+      new_offspring:       "Añadir catecúmeno"
+      offspring_added:     "Se añadió el catecúmeno %{offspring}"
+      offspring_not_added: "No se pudo añadir el catecúmeno"
+    create:
+      offspring_added:     "Se añadió el catecúmeno %{offspring}"
+      offspring_not_added:  "No se pudo añadir al catecúmeno"
+      invalid_grade: "Para añadir un catecúmeno de este curso contacte directamente con la parroquia, por favor"
+    destroy:
+      offspring_deleted:     "Se ha borrado el catecúmeno %{offspring}"
+      offspring_not_deleted: "No se ha podido borrar el catecúmeno"
+      offspring_not_found:   "El catecúmeno no existe"
+    edit:
+      update: "Actualizar"
+      edit_offspring: "Editar catecúmeno %{name}"
+      offspring_not_found:   "El catecúmeno no existe"
+    update:
+      offspring_updated: "Los datos de %{name} se han actualizado"
+      offspring_not_updated: "Error al actualizar los datos"
+      offspring_not_found:   "El catecúmeno no existe"
+    index:
+      offsprings:    "Catecúmenos"
+      add_offspring: "Añadir catecúmeno"
+    offspring:
+      assign:            "Asignar turno"
+      show:              "Mostrar"
+      no_assignment_yet: "No tiene turno asignado todavía"
+    show:
+      are_you_sure?:    "¿Está seguro? Esta acción no puede deshacerse"
+      assign: "Asignar turno"
+      back: "Volver"
+      delete_offspring: "Borrar catecúmeno"
+      edit: "Editar"
+      no_assignment_yet: "No tiene turno asignado todavía"
+      offspring: "Catecúmeno"
+      offspring_not_found:   "El catecúmeno no existe"

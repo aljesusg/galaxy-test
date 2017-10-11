@@ -1,0 +1,31 @@
+<tr>
+  <td>
+    <%= link_to offspring.id, offspring_path(offspring) %>
+  </td>
+  <td>
+    <%= link_to offspring.first_name, offspring_path(offspring) %>
+  </td>
+  <td>
+    <%= link_to offspring.last_name, offspring_path(offspring) %>
+  </td>
+  <td>
+    <%= I18n.t offspring.grade, scope: 'grades' %>
+  </td>
+
+  <td>
+    <%= offspring.shift&.full_name %>
+  </td>
+
+  <td>
+    <%= link_to offspring.user.full_name, user_path(offspring.user) %>
+
+  </td>
+
+  <td>
+    <%= l offspring.created_at %>
+  </td>
+
+  <td>
+    <%= l offspring.updated_at %>
+  </td>
+</tr>

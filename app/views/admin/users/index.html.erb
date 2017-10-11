@@ -1,0 +1,51 @@
+<h1> <%= t ('.users') %></h1>
+<p>
+  <%= link_to(t('.download_users'), admin_users_path(format: :csv), class: "btn btn-lg btn-primary") %>
+</p>
+<table class="datatable table table-striped table-bordered">
+  <thead>
+  <tr>
+    <th>
+      <%= User.human_attribute_name('id') %>
+    </th>
+    <th>
+      <%= User.human_attribute_name('admin') %>
+    </th>
+    <th>
+      <%= User.human_attribute_name('email') %>
+    </th>
+    <th>
+      <%= User.human_attribute_name('first_name') %>
+    </th>
+    <th>
+      <%= User.human_attribute_name('last_name') %>
+    </th>
+    <th>
+      <%= User.human_attribute_name('offsprings') %>
+    </th>
+    <th>
+      <%= User.human_attribute_name('phone') %>
+    </th>
+    <th>
+      <%= User.human_attribute_name('confirmed_at') %>
+    </th>
+    <th>
+      <%= User.human_attribute_name('created_at') %>
+    </th>
+    <th>
+      <%= User.human_attribute_name('updated_at') %>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @users %>
+  </tbody>
+</table>
+
+
+<script>
+    // Initialize Datatables
+    $(document).ready(function() {
+        $('.datatable').dataTable();
+    });
+</script>

@@ -1,0 +1,47 @@
+<h1>
+  <%= (t '.offsprings').to_s %>
+</h1>
+<p>
+  <%= link_to(t('.download_offsprings'), admin_offsprings_path(format: :csv), class: "btn btn-lg btn-primary") %>
+</p>
+<table class="datatable table table-striped table-bordered">
+  <thead>
+  <tr>
+    <th>
+      <%= Offspring.human_attribute_name('id') %>
+    </th>
+    <th>
+      <%= Offspring.human_attribute_name('first_name') %>
+    </th>
+    <th>
+      <%= Offspring.human_attribute_name('last_name') %>
+    </th>
+    <th>
+      <%= Offspring.human_attribute_name('grade') %>
+    </th>
+    <th>
+      <%= Offspring.human_attribute_name('shift') %>
+    </th>
+    <th>
+      <%= Offspring.human_attribute_name('user') %>
+    </th>
+    <th>
+      <%= Offspring.human_attribute_name('created_at') %>
+    </th>
+    <th>
+      <%= Offspring.human_attribute_name('updated_at') %>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @offsprings %>
+  </tbody>
+</table>
+
+
+<script>
+    // Initialize Datatables
+    $(document).ready(function() {
+        $('.datatable').dataTable();
+    });
+</script>

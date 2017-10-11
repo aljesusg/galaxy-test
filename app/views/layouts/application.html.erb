@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <meta charset="UTF-8">
+    <title><%= t 'application.name' %></title>
+
+  </head>
+
+  <body>
+    <% if current_user&.admin? %>
+      <%= render 'layouts/admin_masthead' %>
+    <% else %>
+      <%= render '/layouts/masthead' %>
+    <% end %>
+    <%= render '/layouts/alerts' %>
+    <%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+  </body>
+</html>

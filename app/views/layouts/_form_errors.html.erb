@@ -1,0 +1,16 @@
+<% if object.errors.any? %>
+  <ul class="list-group">
+      <% object.errors.full_messages.each do |msg| %>
+      <li class="list-group item">
+          <div class="alert alert-danger">
+            <span>
+              <div class="pficon pficon-error-circle-o"></div>
+              <strong>
+                <%= msg %>
+              </strong>
+            </span>
+          </div>
+      </li>
+      <% end %>
+  </ul>
+<% end %>

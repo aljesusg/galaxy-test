@@ -1,0 +1,24 @@
+{
+  "name": "lastablas",
+  "homepage": "https://github.com/sergio-ocon/lastablas",
+  "authors": [
+    "Sergio Ocon <sergio.ocon@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "patternfly-sass": "^3.23.0"
+  },
+  "resolutions": {
+    "jquery": "1.9.4"
+  }
+}

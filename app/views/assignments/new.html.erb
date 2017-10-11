@@ -1,0 +1,7 @@
+<div class="container-fluid">
+  <h2> <%=t('.choose_shifts', who: @offspring.first_name)%></h2>
+
+  <% unless @rooms.empty? %>
+      <%= render partial: 'room', collection: @rooms %>
+  <% end %>
+</div>
