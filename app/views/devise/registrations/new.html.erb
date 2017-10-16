@@ -6,12 +6,12 @@
       <%= render "layouts/form_errors", object: @user %>
 
       <div class="form-group">
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name, class: 'form-control' %>
+        <%= f.label :full_name %>
+        <%= f.text_field :full_name, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name, class: 'form-control' %>
+        <%= f.label :short_name %>
+        <%= f.text_field :short_name, class: 'form-control' %>
       </div>
 
       <div class="form-group">
@@ -20,8 +20,8 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :phone %>
-        <%= f.phone_field :phone, class: 'form-control' %>
+        <%= f.label :github_user %>
+        <%= f.text_field :github_user, class: 'form-control' %>
       </div>
 
       <div class="form-group">
