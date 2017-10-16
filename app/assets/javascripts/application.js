@@ -12,8 +12,5 @@
 //
 //= require jquery
 //= require bootstrap
-//= require bootstrap-select
 //= require patternfly
-//= require angular-patternfly
-//= require angular
 //= require_tree .
