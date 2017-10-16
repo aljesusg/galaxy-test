@@ -4,17 +4,18 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :validatable,
-         :confirmable, :lockable, :timeoutable
+         :lockable, :timeoutable
+         # confirmable
 
   # Validates name
   validates :full_name,  presence: true, length: { within: 2..80 }
-  validates :sort_name,  presence: true, length: { within: 2..80 }
+  validates :short_name, presence: true, length: { within: 2..80 }
 
   # Has Offspring
   has_many :offsprings, dependent: :destroy
 
   def self.to_csv
-    attributes = %w[id first_name last_name phone email]
+    attributes = %w[id full_name short_name email]
 
     CSV.generate(headers: true) do |csv|
       csv << attributes

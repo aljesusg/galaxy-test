@@ -20,7 +20,7 @@
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
           <span class="pficon pficon-user"></span>
-          <%= user_signed_in? ? current_user.first_name : t(".not_identified") %>
+          <%= user_signed_in? ? current_user.short_name : t(".not_identified") %>
           <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
@@ -68,12 +68,12 @@
       </li>
       <li>
         <% if user_signed_in? %>
-            <%= link_to t('.offsprings'), offsprings_path %>
+            <%= link_to t('.offsprings'), "#" %>
         <% end %>
       </li>
       <li>
         <% if user_signed_in? %>
-            <%= link_to t('.rooms'), rooms_path %>
+            <%= link_to t('.rooms'), "#" %>
         <% end %>
       </li>
       <li class="dropdown">

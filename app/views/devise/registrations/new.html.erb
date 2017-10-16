@@ -20,11 +20,6 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :github_user %>
-        <%= f.text_field :github_user, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <em>( <%= I18n.t( 'registrations.new.characters_minimum', characters: @minimum_password_length) %> )</em>
