@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require bootstrap
-//# require dataTables
-//# require matchHeight
+//= require bootstrap-select
 //= require patternfly
+//= require angular-patternfly
+//= require angular
 //= require_tree .

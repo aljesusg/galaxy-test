@@ -16,9 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "patternfly-sass": "^3.23.0"
-  },
-  "resolutions": {
-    "jquery": "1.9.4"
+    "angular-patternfly": "^4.11.1"
   }
 }
