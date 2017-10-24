@@ -16,6 +16,7 @@
     <% end %>
     <%= render '/layouts/alerts' %>
     <%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
     <div class="container-fluid">
       <%= yield %>
     </div>
