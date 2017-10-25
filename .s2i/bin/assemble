@@ -19,14 +19,6 @@ if [ -n "$RUBYGEM_MIRROR" ]; then
   bundle config mirror.https://rubygems.org $RUBYGEM_MIRROR
 fi
 
-echo "Installing yarn"
-echo "PATH:"
-echo $PATH
-curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
-PATH=$PATH:$HOME/.yarn/bin
-ls $HOME/.yarn -l
-ln $HOME/.yarn/bin/yarn /opt/app-root/src/bin/yarn
-
 shopt -s dotglob
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
@@ -56,6 +48,17 @@ if [ -f Gemfile ]; then
   echo "---> Cleaning up unused ruby gems ..."
   bundle clean -V
 fi
+
+echo "Installing yarn"
+echo "PATH:"
+echo $PATH
+curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
+PATH=$PATH:$HOME/.yarn/bin
+echo "ls $HOME/.yarn/bin"
+ls $HOME/.yarn/bin -l
+echo "ls /opt/app-root"
+ls -l /opt/app-root
+ln $HOME/.yarn/bin/yarn /opt/app-root/src/bin/yarn
 
 if ! bundle exec rackup -h &>/dev/null; then
   echo "WARNING: Rubygem Rack is not installed in the present image."
