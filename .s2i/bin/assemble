@@ -51,7 +51,7 @@ if [ -f Gemfile ]; then
 
   echo "---> Running 'bundle install ${ADDTL_BUNDLE_ARGS}' ..."
   bundle install --path ./bundle ${ADDTL_BUNDLE_ARGS}
-  echo "---> Running 'yarn install ${YARN_OPTIONS'"
+  echo "---> Running 'yarn install ${YARN_OPTIONS}'"
   yarn install ${YARN_OPTIONS}
 
   echo "---> Cleaning up unused ruby gems ..."
