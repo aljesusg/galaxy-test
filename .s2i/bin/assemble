@@ -24,6 +24,7 @@ echo "PATH:"
 echo $PATH
 curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
 PATH=$PATH:$HOME/.yarn/bin
+ls $HOME/.yarn -l
 ln $HOME/.yarn/bin/yarn /opt/app-root/src/bin/yarn
 
 shopt -s dotglob
