@@ -9,5 +9,11 @@ class UsersController < ApplicationController
       flash[:alert] = t '.user_not_found'
       redirect_to user_path
     end
+
+    # if current_user.github_user
+    #  ghuser = Octokit.user current_user.github_user
+    #  @repos = Octokit.repos ghuser.id unless ghuser.nil?
+    # end
+    byebug
   end
 end

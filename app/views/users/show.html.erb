@@ -17,6 +17,25 @@
         <%= @user.short_name %>
       </div>
     </div>
+
+    <div class="form-group">
+      <div class="control-label">
+        <%= User.human_attribute_name 'github_user' %>
+      </div>
+      <div class="form-control" disabled="<%= :disabled %>">
+        <%= @user.github_user %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="control-label">
+        <%= User.human_attribute_name 'karma' %>
+      </div>
+      <div class="form-control" disabled="<%= :disabled %>">
+        <%= @user.karma %>
+      </div>
+    </div>
+
     <div class="form-group">
       <div class="control-label">
         <%= User.human_attribute_name 'email' %>
