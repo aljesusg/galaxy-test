@@ -55,6 +55,8 @@ if [ -f Gemfile ]; then
   bundle clean -V
 fi
 
+echo "installing yarn packages"
+yarn install
 
 if ! bundle exec rackup -h &>/dev/null; then
   echo "WARNING: Rubygem Rack is not installed in the present image."
