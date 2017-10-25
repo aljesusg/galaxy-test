@@ -47,7 +47,7 @@ group :development, :test do
   gem 'capybara', '~> 2.15'
   gem 'coveralls', require: false
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails', '~> 3.6'
   gem 'selenium-webdriver'
@@ -67,9 +67,12 @@ end
 # Install it wil bower, not as a gem, to install JS dependencies
 gem 'jquery-rails'
 gem 'patternfly-sass', '~> 3.23.0'
+
 #
 # Devise
 #
 gem 'devise', '~> 4.0'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'octokit', '~> 4.0'
