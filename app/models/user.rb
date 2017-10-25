@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :validatable,
-         :lockable, :timeoutable
+         :lockable, :timeoutable, :omniauthable, :omniauth_providers => [:github]
          # confirmable
 
   # Validates name
@@ -13,6 +13,10 @@ class User < ApplicationRecord
 
   # Has Offspring
   has_many :offsprings, dependent: :destroy
+
+  def self.from_omniauth(auth)
+    User.find_by(github_user: auth.extra.raw_info.login)
+  end
 
   def self.to_csv
     attributes = %w[id full_name short_name email]

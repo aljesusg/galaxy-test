@@ -22,8 +22,8 @@
     <div class="actions">
       <%= f.submit t(".log_in"), class: "btn btn-lg btn-default" %>
     </div>
-
   <% end %>
+  <%= link_to "Sign in with github", user_github_omniauth_authorize_path, class: "btn btn-lg fa fa-github"%>
   <br>
   <%= render "devise/shared/links" %>
 </div>

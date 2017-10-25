@@ -14,6 +14,5 @@ class UsersController < ApplicationController
     #  ghuser = Octokit.user current_user.github_user
     #  @repos = Octokit.repos ghuser.id unless ghuser.nil?
     # end
-    byebug
   end
 end
