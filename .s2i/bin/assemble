@@ -53,12 +53,7 @@ echo "Installing yarn"
 echo "PATH:"
 echo $PATH
 curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
-PATH=$PATH:$HOME/.yarn/bin
-echo "ls $HOME/.yarn/bin"
-ls $HOME/.yarn/bin -l
-echo "ls /opt/app-root"
-ls -l /opt/app-root
-ln $HOME/.yarn/bin/yarn /opt/app-root/src/bin/yarn
+cp -a $HOME/.yarn/bin/. /opt/app-root/bin
 
 if ! bundle exec rackup -h &>/dev/null; then
   echo "WARNING: Rubygem Rack is not installed in the present image."
