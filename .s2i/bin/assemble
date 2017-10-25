@@ -21,7 +21,7 @@ fi
 
 echo "Installing yarn"
 echo $PATH
-npm install --global yarn
+curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
 
 shopt -s dotglob
 echo "---> Installing application source ..."
