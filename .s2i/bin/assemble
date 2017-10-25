@@ -13,6 +13,12 @@ function rake_assets_precompile() {
 
 set -e
 
+echo "Installing yarn"
+curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
+echo "Copying .yarn to app-root (bin and lib) to add it to path"
+cp -a $HOME/.yarn/. /opt/app-root
+
+
 export RACK_ENV=${RACK_ENV:-"production"}
 
 if [ -n "$RUBYGEM_MIRROR" ]; then
@@ -49,11 +55,6 @@ if [ -f Gemfile ]; then
   bundle clean -V
 fi
 
-echo "Installing yarn"
-echo "PATH:"
-echo $PATH
-curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
-cp -a $HOME/.yarn/bin/. /opt/app-root/bin
 
 if ! bundle exec rackup -h &>/dev/null; then
   echo "WARNING: Rubygem Rack is not installed in the present image."
