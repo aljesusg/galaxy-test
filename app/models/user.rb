@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  require 'csv'
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :short_name, presence: true, length: { within: 2..80 }
 
   # Has Offspring
-  has_many :offsprings, dependent: :destroy
+  has_many :git_hub_repos, dependent: :destroy
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -26,18 +26,6 @@ class User < ApplicationRecord
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
-    end
-  end
-
-  def self.to_csv
-    attributes = %w[id full_name short_name email]
-
-    CSV.generate(headers: true) do |csv|
-      csv << attributes
-
-      all.each do |user|
-        csv << attributes.map{ |attr| user.instance_eval(attr) }
-      end
     end
   end
 end

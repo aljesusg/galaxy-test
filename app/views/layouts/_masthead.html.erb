@@ -77,7 +77,7 @@
       </li>
       <li>
         <% if user_signed_in? %>
-          <%= link_to t('.my_roles'), "#" %>
+          <%= link_to t('.my_roles'), user_git_hub_repos_path(current_user) %>
         <% end %>
       </li>
 

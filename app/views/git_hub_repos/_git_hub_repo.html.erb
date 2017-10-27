@@ -1,0 +1,41 @@
+<div class="list-group-item">
+  <div class="list-view-pf-checkbox">
+    <input type="checkbox">
+  </div>
+  <div class="list-view-pf-actions">
+    <button class="btn btn-default">Action</button>
+
+  </div>
+  <div class="list-view-pf-main-info">
+    <div class="list-view-pf-left">
+      <span class="fa fa-github list-view-pf-icon-sm"></span>
+    </div>
+    <div class="list-view-pf-body">
+      <div class="list-view-pf-description">
+        <div class="list-group-item-heading">
+          <%= git_hub_repo.full_name %>
+        </div>
+        <div class="list-group-item-text">
+          <%= git_hub_repo.description %>
+
+        </div>
+      </div>
+      <div class="list-view-pf-additional-info">
+        <div class="list-view-pf-additional-info-item">
+          <span class="fa fa-code-fork"></span>
+          <strong> <%= git_hub_repo.forks_count %>
+          </strong> Forks
+        </div>
+        <div class="list-view-pf-additional-info-item">
+          <span class="fa fa-star"></span>
+          <strong> <%= git_hub_repo.stargazers_count %>
+          </strong> Stargazers
+        </div>
+        <div class="list-view-pf-additional-info-item">
+          <span class="fa fa-binoculars"></span>
+          <strong> <%= git_hub_repo.watchers_count %> </strong> Watchers
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

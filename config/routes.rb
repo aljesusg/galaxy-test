@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'user_roles/index'
+
   get 'welcome/info',  as: 'info'
   get 'welcome/help',  as: 'help'
   get 'welcome/about', as: 'about'
@@ -9,7 +11,13 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   # config/routes.rb
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :git_hub_repos, only: [:index] do
+      collection do
+        post :refresh
+      end
+    end
+  end
 
   namespace :admin do
     resources :users, only: [:index]

@@ -1,0 +1,13 @@
+<h1>
+  User repos
+</h1>
+
+<div class="container-fluid">
+  <div class="list-group list-view-pf list-view-pf-view">
+      <%= render @repos if @repos %>
+
+  </div>
+
+</div>
+
+<%= button_to "refresh", refresh_user_git_hub_repos_path(user_id: @user) %>
