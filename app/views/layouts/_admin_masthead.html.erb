@@ -60,10 +60,16 @@
     </ul>
     <ul class="nav navbar-nav navbar-primary">
       <li>
-        <%= link_to (t'.users'), admin_users_path %>
+        <%= link_to (t'.explore'), "#" %>
       </li>
       <li>
-        <%= link_to t('.offsprings'), admin_offsprings_path %>
+        <%= link_to (t'.browse_roles'), "#" %>
+      </li>
+      <li>
+        <%= link_to t('.browse_author'), "#" %>
+      </li>
+      <li>
+        <%= link_to t('.my_role'), "#" %>
       </li>
       <li>
         <% if user_signed_in? %>

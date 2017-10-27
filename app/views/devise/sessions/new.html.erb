@@ -1,29 +1,6 @@
 <h2><%= t(".log_in")%></h2>
 
-<div class="container-fluid">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-group">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
-      <div class="form-group">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me, class: 'form-control' %>
-      </div>
-    <% end -%>
-
-    <div class="actions">
-      <%= f.submit t(".log_in"), class: "btn btn-lg btn-default" %>
-    </div>
+  <%= link_to user_github_omniauth_authorize_path  do %>
+    <%= image_tag("github-mark", height: "64", alt: (t 'application.name').to_s) %>
+    <h3>Log in with github</h3>
   <% end %>
-  <%= link_to "Sign in with github", user_github_omniauth_authorize_path, class: "btn btn-lg fa fa-github"%>
-  <br>
-  <%= render "devise/shared/links" %>
-</div>
