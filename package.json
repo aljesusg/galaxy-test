@@ -2,7 +2,9 @@
   "license": "MIT",
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
-    "coffeescript": "1.12.7"
+    "caniuse-lite": "^1.0.30000756",
+    "coffeescript": "1.12.7",
+    "webpack": "^3.8.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.3"
