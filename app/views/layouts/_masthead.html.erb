@@ -27,14 +27,14 @@
           <li>
             <%= link_to  new_user_session_path do %>
                 <div class="fa fa-sign-in">
-                  <%= (t '.log_in') %>
+                  <%= (t '.sign_in') %>
                 </div>
             <% end %>
           </li>
           <li>
             <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-link" do %>
                 <div class="fa fa-sign-out">
-                  <%= (t '.log_out')  %>
+                  <%= (t '.sign_out')  %>
                 </div>
             <% end %>
           </li>
@@ -63,7 +63,7 @@
         <% if user_signed_in? %>
             <%= link_to (t'.user_panel'), user_path(current_user) %>
         <% else %>
-            <%= link_to (t'.log_in'), new_user_session_path %>
+            <%= link_to (t'.sign_in'), new_user_session_path %>
         <% end %>
       </li>
       <li>
