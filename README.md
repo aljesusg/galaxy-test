@@ -1,3 +1,37 @@
+Introduction
+============
+
+Please configure the system properly for this to run:
+Configure the following Environment Variables in the deployment
+
+- SECRET_KEY_BASE
+- GITHUB_OAUTH_ID
+- GITHUB_OAUTH_SECRET
+
+Those github id and secret are the Oauth authentication of github
+
+Please create as developer a OAuth authentication app in github and populate the ID and Secret with those from Github
+
+If you are running it in localhost use the following data (or update for minishift)
+Homepage_URL: 
+
+`http://localhost:3000`
+
+Authorization callback URL
+
+`http://localhost:3000/users/auth/github/callback`
+
+You need to configure the ruby template to use 2.4. Please update the build config chaning ruby:2.3 to ruby:2.4. The version of Node.js installed with 2.
+
+```ruby
+  strategy:
+      ...
+      from:
+        kind: ImageStreamTag
+        name: 'ruby:2.4'
+        namespace: openshift
+    type: Source
+```
 
 
 <!-- toc -->
