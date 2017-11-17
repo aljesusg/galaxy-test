@@ -70,6 +70,7 @@ class GitHubReposController < ApplicationController
       GitHubRepo.destroy(id: xid)
     end
     count_updated = 0
+
     updated_repos.each do |xid|
       ghrepo = repos.find { |x| x.id == xid } # Find the original information for the repo
       lrepo  = GitHubRepo.find(xid) # Find the copy
