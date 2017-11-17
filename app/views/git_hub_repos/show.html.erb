@@ -9,9 +9,11 @@
 
 <h2> README </h2>
 
-<%= @readme %>
+<%= @readme.content %>
 
 <h2> File structure </h2>
 
-<%= @files %>
+<div class="list-group list-view-pf list-view-pf-view">
 
+  <%= render partial:"git_hub_repo_file", collection: @files %>
+</div>
