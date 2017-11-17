@@ -1,9 +1,8 @@
 <div class="list-group-item">
-  <div class="list-view-pf-checkbox">
-    <input type="checkbox">
-  </div>
   <div class="list-view-pf-actions">
-    <button class="btn btn-default">Action</button>
+    <div class="btn btn-default">
+      <%= link_to "GitHub", git_hub_repo.html_url, :target => "_blank" %>
+    </div>
 
   </div>
   <div class="list-view-pf-main-info">
@@ -13,7 +12,7 @@
     <div class="list-view-pf-body">
       <div class="list-view-pf-description">
         <div class="list-group-item-heading">
-          <%= git_hub_repo.full_name %>
+          <%= git_hub_repo.name %>
         </div>
         <div class="list-group-item-text">
           <%= git_hub_repo.description %>
@@ -34,6 +33,10 @@
         <div class="list-view-pf-additional-info-item">
           <span class="fa fa-binoculars"></span>
           <strong> <%= git_hub_repo.watchers_count %> </strong> Watchers
+        </div>
+        <div class="list-view-pf-additional-info-item">
+          <span class="pficon pficon-error-circle-o"></span>
+          <strong> <%= git_hub_repo.open_issues_count || 0 %> </strong> Issues
         </div>
       </div>
     </div>
