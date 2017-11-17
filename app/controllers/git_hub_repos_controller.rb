@@ -4,6 +4,17 @@ class GitHubReposController < ApplicationController
     @repos = GitHubRepo.where(user: @user)
   end
 
+  def index_clean
+    # Find the user or current_user (if not admin)
+    user = if current_user.admin?
+             User.find(params[:user_id])
+           else
+             current_user
+           end
+    GitHubRepo.where(user: user).destroy_all
+    redirect_to user_git_hub_repos_path
+  end
+
   def refresh
     Octokit.auto_paginate = true
     client = Octokit::Client.new(access_token: session["devise.github_data"]["credentials"]["token"])
@@ -30,7 +41,7 @@ class GitHubReposController < ApplicationController
 
     # Create new repos if they are not found
     new_repos.each do |xid|
-      ghrepo = repos.find { |x| x.id = xid } # Find the original information for the repo
+      ghrepo = repos.find { |x| x.id == xid } # Find the original information for the repo
       GitHubRepo.create(id: ghrepo.id,
                         name: ghrepo.name,
                         full_name: ghrepo.full_name,
@@ -58,11 +69,12 @@ class GitHubReposController < ApplicationController
     deleted_repos.each do |xid|
       GitHubRepo.destroy(id: xid)
     end
-
+    count_updated = 0
     updated_repos.each do |xid|
-      ghrepo = repos.find { |x| x.id = xid } # Find the original information for the repo
+      ghrepo = repos.find { |x| x.id == xid } # Find the original information for the repo
       lrepo  = GitHubRepo.find(xid) # Find the copy
       if lrepo.gh_updated_at < ghrepo.updated_at # Update the database if github is newer
+        count_updated += 1
         lrepo.update(name: ghrepo.name,
                      full_name: ghrepo.full_name,
                      description: ghrepo.description,
@@ -86,7 +98,8 @@ class GitHubReposController < ApplicationController
                      user: user)
       end
     end
-    flash[:success] = "Created/Deleted/Updated #{new_repos.count}/#{deleted_repos.count}/#{updated_repos.count} Repos"
+    flash[:info] = "Total: #{repos.count} Repos"
+    flash[:success] = "Created/Deleted/Updated #{new_repos.count}/#{deleted_repos.count}/#{count_updated} Repos"
 
 
     redirect_to user_git_hub_repos_path
