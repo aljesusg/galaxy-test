@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'user_roles/index'
+  get 'git_hub_repos/show'
+
+  get 'git_hub_repos/refresh'
 
   get 'welcome/info',  as: 'info'
   get 'welcome/help',  as: 'help'
@@ -15,9 +17,12 @@ Rails.application.routes.draw do
     resources :git_hub_repos, only: [:index] do
       collection do
         post :refresh
+        post :clean
       end
     end
   end
+
+  resources :git_hub_repos, only: [:show]
 
   namespace :admin do
     resources :users, only: [:index]

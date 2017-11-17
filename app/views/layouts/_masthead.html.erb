@@ -70,16 +70,19 @@
         <%= link_to (t'.explore'), "#" %>
       </li>
       <li>
-        <%= link_to (t'.browse_roles'), "#" %>
+        <%= link_to (t'.browse_spins'), "#" %>
       </li>
       <li>
         <%= link_to t('.browse_authors'), "#" %>
       </li>
+      <% if user_signed_in? %>
       <li>
-        <% if user_signed_in? %>
-          <%= link_to t('.my_roles'), user_git_hub_repos_path(current_user) %>
-        <% end %>
+          <%= link_to t('.my_repos'), user_git_hub_repos_path(current_user) %>
       </li>
+      <li>
+        <%= link_to t('.my_spins'), "#" %>
+      </li>
+      <% end %>
 
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">

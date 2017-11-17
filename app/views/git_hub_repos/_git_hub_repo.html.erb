@@ -1,8 +1,7 @@
 <div class="list-group-item">
   <div class="list-view-pf-actions">
-    <div class="btn btn-default">
-      <%= link_to "GitHub", git_hub_repo.html_url, :target => "_blank" %>
-    </div>
+    <%= link_to "GitHub", git_hub_repo.html_url, :target => "_blank", class:"btn btn-default" %>
+    <%= link_to "Show", git_hub_repo_path(git_hub_repo), class: "btn btn-info" %>
 
   </div>
   <div class="list-view-pf-main-info">

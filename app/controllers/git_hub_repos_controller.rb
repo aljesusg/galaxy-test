@@ -4,7 +4,14 @@ class GitHubReposController < ApplicationController
     @repos = GitHubRepo.where(user: @user)
   end
 
-  def index_clean
+  def show
+    client = Octokit::Client.new(access_token: session["devise.github_data"]["credentials"]["token"])
+    @repo = GitHubRepo.find(params[:id])
+    @readme = client.readme(@repo.full_name)
+    @files = client.contents(@repo.full_name, path: '/')
+  end
+
+  def clean
     # Find the user or current_user (if not admin)
     user = if current_user.admin?
              User.find(params[:user_id])
